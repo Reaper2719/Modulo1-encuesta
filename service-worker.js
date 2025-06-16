@@ -3,8 +3,10 @@ self.addEventListener("install", e => {
     caches.open("modulo1-cache").then(cache => {
       return cache.addAll([
         "index.html",
-        "styles.css",
-        "script.js",
+        "style.css",
+        "main.js",
+        "indexedDB.js",
+        "export.js",
         "manifest.json",
         "icon-192.png",
         "icon-512.png"
