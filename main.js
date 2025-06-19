@@ -1,3 +1,20 @@
+
+function limpiarFormulario() {
+  const formulario = document.getElementById('formularioModulo');
+  if (formulario) {
+    formulario.reset();
+
+    const checkboxes = formulario.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+
+    const radios = formulario.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.checked = false);
+
+    const textareas = formulario.querySelectorAll('textarea');
+    textareas.forEach(textarea => textarea.value = '');
+  }
+}
+
 function guardarRespuestas() {
   const respuestas = {};
   const inputs = document.querySelectorAll("input, textarea");
