@@ -1,20 +1,19 @@
 
+// Función para limpiar el formulario
 function limpiarFormulario() {
-  const formulario = document.getElementById('formularioModulo');
-  if (formulario) {
-    formulario.reset();
-
-    const checkboxes = formulario.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => checkbox.checked = false);
-
-    const radios = formulario.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => radio.checked = false);
-
-    const textareas = formulario.querySelectorAll('textarea');
-    textareas.forEach(textarea => textarea.value = '');
+  const form = document.getElementById('formularioModulo');
+  if (form) {
+    form.reset();
   }
+  // Limpiar checkboxes manualmente (por si hay arrays)
+  const inputs = document.querySelectorAll('input[type="checkbox"]');
+  inputs.forEach(input => { input.checked = false; });
+  // Limpiar campos de texto
+  const textInputs = document.querySelectorAll('input[type="text"], textarea');
+  textInputs.forEach(input => { input.value = ''; });
+  // Limpiar localStorage si se desea
+  // localStorage.removeItem("respuestas_modulo1");
 }
-
 function guardarRespuestas() {
   const respuestas = {};
   const inputs = document.querySelectorAll("input, textarea");
