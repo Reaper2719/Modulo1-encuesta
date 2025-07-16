@@ -104,6 +104,10 @@
     <div class="acciones">
       <button type="button" onclick="guardarRespuestas()">Guardar</button>
       <button type="button" onclick="exportarDatos()">Exportar JSON</button>
+      <button type="button" onclick="copiarJSON()">Copiar JSON</button>
+    </div>
+    <div id="jsonContainer" style="display:none; margin-top:10px;">
+      <textarea id="jsonTextarea" rows="10" cols="50" readonly style="width:100%;"></textarea>
     </div>
     <button id="botonLimpiar" type="button" onclick="limpiarFormulario()" style="margin-top: 20px;">
       Limpiar datos
