@@ -1,8 +1,8 @@
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open('modulo1-cache-v2').then(cache => {
+      // Usar rutas relativas para máxima compatibilidad                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
       return cache.addAll([
-        '/',
         'index.html',
         'style.css',
         'main.js',
@@ -31,10 +31,16 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      return response || fetch(event.request).catch(() => {
-        if (event.request.destination === 'document') {
+      // Si está en caché, responde con caché
+      if (response) return response;
+      // Si no, intenta buscar en red
+      return fetch(event.request).catch(() => {
+        // Si falla y es navegación, muestra offline
+        if (event.request.mode === 'navigate' || event.request.destination === 'document') {
           return caches.match('index.html');
         }
+        // Fallback para otros recursos
+        return new Response('Offline', { status: 503, statusText: 'Offline' });
       });
     })
   );
