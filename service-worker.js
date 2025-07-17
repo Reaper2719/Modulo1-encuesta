@@ -31,14 +31,13 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      // Si está en caché, responde con caché
       if (response) return response;
-      // Si no, intenta buscar en red
+      // Si es navegación (modo standalone o PWA), siempre mostrar index.html offline
+      if (event.request.mode === 'navigate') {
+        return caches.match('index.html');
+      }
+      // Si no es navegación, intenta buscar en red
       return fetch(event.request).catch(() => {
-        // Si falla y es navegación, muestra offline
-        if (event.request.mode === 'navigate' || event.request.destination === 'document') {
-          return caches.match('index.html');
-        }
         // Fallback para otros recursos
         return new Response('Offline', { status: 503, statusText: 'Offline' });
       });
