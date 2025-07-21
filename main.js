@@ -14,8 +14,22 @@ function limpiarFormulario() {
     document.querySelectorAll('textarea').forEach(function(textarea) {
         textarea.value = '';
     });
+    
+    // Limpiar el área de JSON si está visible
+    const container = document.getElementById('jsonContainer');
+    if (container) {
+        container.style.display = 'none';
+    }
 }
 function guardarRespuestas() {
+  // Obtener respuestas anteriores si existen
+  let todasLasRespuestas = [];
+  const respuestasAnteriores = localStorage.getItem("respuestas_modulo1");
+  if (respuestasAnteriores) {
+    todasLasRespuestas = JSON.parse(respuestasAnteriores);
+  }
+
+  // Crear nuevo objeto de respuestas
   const respuestas = {};
   const inputs = document.querySelectorAll("input, textarea");
   inputs.forEach(input => {
@@ -38,7 +52,15 @@ function guardarRespuestas() {
       }
     }
   });
-  localStorage.setItem("respuestas_modulo1", JSON.stringify(respuestas));
-  alert("Respuestas guardadas localmente.");
+
+  // Agregar timestamp para identificar cada registro
+  respuestas.timestamp = new Date().toISOString();
+  
+  // Agregar las nuevas respuestas al array
+  todasLasRespuestas.push(respuestas);
+  
+  // Guardar todas las respuestas
+  localStorage.setItem("respuestas_modulo1", JSON.stringify(todasLasRespuestas));
+  alert("Respuestas guardadas localmente. Total de registros: " + todasLasRespuestas.length);
 }
 
