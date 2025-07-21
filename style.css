@@ -7,15 +7,41 @@ body {
   color: #333;
 }
 .sena-logo {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 30px;
-  width: 100px; /* Aumenté el tamaño */
-  height: auto; /* Para mantener la proporción */
+  width: 100px;
+  height: auto;
   z-index: 10;
-  display: block; /* Asegura que se muestre como bloque */
-  object-fit: contain; /* Mantiene la proporción */
-  max-width: 100%; /* Responsive */
+  display: block;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* Media query para iPads en general */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sena-logo {
+    width: 120px;
+    top: 30px;
+    right: 40px;
+  }
+}
+
+/* Media query específica para iPad Pro */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .sena-logo {
+    width: 150px;
+    top: 40px;
+    right: 50px;
+  }
+}
+
+/* Asegurar que el logo sea visible en modo landscape */
+@media screen and (orientation: landscape) {
+  .sena-logo {
+    top: 20px;
+    right: 30px;
+  }
 }
 main {
   max-width: 800px;
