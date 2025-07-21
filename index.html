@@ -9,45 +9,43 @@
   <title>Módulo 1 - Encuesta Energética</title>
 </head>
 <body>
+  <img src="img/logo-sena.png" alt="Logo SENA" class="sena-logo" />
   <main>
     <h1>Encuesta Energética - Módulo 1</h1>
-    <form id="formularioModulo" id="formulario">
-
-    <p><strong>Descripcion de la casa:</strong></p>
-    <textarea name="casa" rows="4" cols="50" placeholder="Coloque aqui la descripcion de la casa (Acorde en los tres modulos)"></textarea>
- 
-    <!-- PREGUNTA 1 -->
-    <fieldset>
-      <legend>1. ¿Qué problemas relacionados con el servicio de energía eléctrica se presentan con frecuencia en su vivienda o comunidad?</legend>
-      <label><input type="checkbox" name="p1" value="Apagones o cortes de luz frecuentes"> Apagones o cortes de luz frecuentes</label><br>
-      <label><input type="checkbox" name="p1" value="Baja tensión (los bombillos alumbran poco)"> Baja tensión (los bombillos alumbran poco)</label><br>
-      <label><input type="checkbox" name="p1" value="Daños o quema de electrodomésticos"> Daños o quema de electrodomésticos</label><br>
-      <label><input type="checkbox" name="p1" value="Sobrecargas (se disparan los tacos o el sistema colapsa)"> Sobrecargas (se disparan los tacos o el sistema colapsa)</label><br>
-      <label><input type="checkbox" name="p1" value="No presenta problemas con la energía"> No presenta problemas con la energía</label>
-    </fieldset>
-
-    <!-- PREGUNTA 2 -->
-    <fieldset>
-      <legend>2. Si utiliza combustibles para plantas eléctricas (como gasolina, diésel), ¿cuánto gasta aproximadamente al mes?</legend>
-      <label><input type="radio" name="p2" value="Menos de $50.000"> Menos de $50.000</label><br>
-      <label><input type="radio" name="p2" value="Entre $50.000 y $100.000"> Entre $50.000 y $100.000</label><br>
-      <label><input type="radio" name="p2" value="Entre $100.000 y $150.000"> Entre $100.000 y $150.000</label><br>
-      <label><input type="radio" name="p2" value="Entre $150.000 y $200.000"> Entre $150.000 y $200.000</label><br>
-      <label><input type="radio" name="p2" value="Más de $200.000"> Más de $200.000</label><br>
-      <label><input type="radio" name="p2" value="No aplica"> No aplica</label>
-    </fieldset>
-
-    <!-- PREGUNTA 3 -->
-    <fieldset>
-      <legend>3. ¿Qué tipo de energía o combustible utiliza para cocinar en su hogar?</legend>
-      <label><input type="checkbox" name="p3" value="Energía eléctrica"> Energía eléctrica</label><br>
-      <label><input type="checkbox" name="p3" value="Gas de pipa o cilindro"> Gas de pipa o cilindro</label><br>
-      <label><input type="checkbox" name="p3" value="Leña"> Leña</label><br>
-      <label><input type="checkbox" name="p3" value="Carbón"> Carbón</label><br>
-      <label><input type="checkbox" name="p3" value="Petróleo"> Petróleo</label><br>
-      <label><input type="checkbox" name="p3" value="Otro"> Otro</label>
-    </fieldset>
-
+    <form id="formularioModulo">
+      <p><strong>Descripcion de la casa:</strong></p>
+      <textarea name="casa" rows="4" cols="50" placeholder="Coloque aqui la descripcion de la casa (Acorde en los tres modulos)"></textarea>
+      <!-- PREGUNTA 1 -->
+      <fieldset>
+        <legend>1. ¿Qué problemas relacionados con el servicio de energía eléctrica se presentan con frecuencia en su vivienda o comunidad?</legend>
+        <label><input type="checkbox" name="p1" value="Apagones o cortes de luz frecuentes"> Apagones o cortes de luz frecuentes</label><br>
+        <label><input type="checkbox" name="p1" value="Baja tensión (los bombillos alumbran poco)"> Baja tensión (los bombillos alumbran poco)</label><br>
+        <label><input type="checkbox" name="p1" value="Daños o quema de electrodomésticos"> Daños o quema de electrodomésticos</label><br>
+        <label><input type="checkbox" name="p1" value="Sobrecargas (se disparan los tacos o el sistema colapsa)"> Sobrecargas (se disparan los tacos o el sistema colapsa)</label><br>
+        <label><input type="checkbox" name="p1" value="No presenta problemas con la energía"> No presenta problemas con la energía</label>
+      </fieldset>
+      <!-- PREGUNTA 2 -->
+      <fieldset>
+        <legend>2. Si utiliza combustibles para plantas eléctricas (como gasolina, diésel), ¿cuánto gasta aproximadamente al mes?</legend>
+        <label><input type="radio" name="p2" value="Menos de $50.000"> Menos de $50.000</label><br>
+        <label><input type="radio" name="p2" value="Entre $50.000 y $100.000"> Entre $50.000 y $100.000</label><br>
+        <label><input type="radio" name="p2" value="Entre $100.000 y $150.000"> Entre $100.000 y $150.000</label><br>
+        <label><input type="radio" name="p2" value="Entre $150.000 y $200.000"> Entre $150.000 y $200.000</label><br>
+        <label><input type="radio" name="p2" value="Más de $200.000"> Más de $200.000</label><br>
+        <label><input type="radio" name="p2" value="No aplica"> No aplica</label>
+      </fieldset>
+      <!-- PREGUNTA 3 -->
+      <fieldset>
+        <legend>3. ¿Qué tipo de energía o combustible utiliza para cocinar en su hogar?</legend>
+        <label><input type="checkbox" name="p3" value="Energía eléctrica"> Energía eléctrica</label><br>
+        <label><input type="checkbox" name="p3" value="Gas de pipa o cilindro"> Gas de pipa o cilindro</label><br>
+        <label><input type="checkbox" name="p3" value="Leña"> Leña</label><br>
+        <label><input type="checkbox" name="p3" value="Carbón"> Carbón</label><br>
+        <label><input type="checkbox" name="p3" value="Petróleo"> Petróleo</label><br>
+        <label><input type="checkbox" name="p3" value="Otro"> Otro</label>
+      </fieldset>
+      <!-- ...existing form fields... -->
+    </form>
     <!-- PREGUNTA 4 -->
     <fieldset>
       <legend>4. ¿Con qué frecuencia compran gas de pipa o cilindro?</legend>
@@ -104,14 +102,11 @@
     <div class="acciones">
       <button type="button" onclick="guardarRespuestas()">Guardar</button>
       <button type="button" onclick="exportarDatos()">Exportar JSON</button>
-      <button type="button" onclick="copiarJSON()">Copiar JSON</button>
+      <button type="button" onclick="limpiarFormulario()">Limpiar Datos</button>
     </div>
     <div id="jsonContainer" style="display:none; margin-top:10px;">
       <textarea id="jsonTextarea" rows="10" cols="50" readonly style="width:100%;"></textarea>
     </div>
-    <button id="botonLimpiar" type="button" onclick="limpiarFormulario()" style="margin-top: 20px;">
-      Limpiar datos
-    </button>
   </form>
   </main>
 

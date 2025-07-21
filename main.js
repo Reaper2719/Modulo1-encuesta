@@ -1,18 +1,25 @@
 
 // Función para limpiar el formulario
 function limpiarFormulario() {
-  const form = document.getElementById('formularioModulo');
-  if (form) {
-    form.reset();
-  }
-  // Limpiar checkboxes manualmente (por si hay arrays)
-  const inputs = document.querySelectorAll('input[type="checkbox"]');
-  inputs.forEach(input => { input.checked = false; });
-  // Limpiar campos de texto
-  const textInputs = document.querySelectorAll('input[type="text"], textarea');
+  // Limpiar todos los checkboxes del documento
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(input => { input.checked = false; });
+  // Limpiar todos los radios del documento
+  const radios = document.querySelectorAll('input[type="radio"]');
+  radios.forEach(input => { input.checked = false; });
+  // Limpiar todos los campos de texto del documento
+  const textInputs = document.querySelectorAll('input[type="text"]');
   textInputs.forEach(input => { input.value = ''; });
-  // Limpiar localStorage si se desea
-  // localStorage.removeItem("respuestas_modulo1");
+  // Limpiar todos los textareas del documento
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(textarea => { textarea.value = ''; });
+  // Limpiar localStorage
+  localStorage.removeItem("respuestas_modulo1");
+  // Ocultar el textarea del JSON exportado si está visible
+  const container = document.getElementById('jsonContainer');
+  if (container) {
+    container.style.display = 'none';
+  }
 }
 function guardarRespuestas() {
   const respuestas = {};
